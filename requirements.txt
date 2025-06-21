@@ -1,0 +1,23 @@
+Flask==3.1.1
+Flask-SQLAlchemy==3.0.4
+Flask-Migrate==4.1.0
+Flask-WTF==1.1.1
+psycopg2-binary==2.9.9
+Flask-Login==0.6.3
+Flask-Mail==0.9.1         # For sending emails
+requests==2.31.0          # For making HTTP requests
+python-dotenv==1.0.1      # For loading `.env` configs
+Flask-Script==2.0.6       # For manage.py commands
+Flask-Assets==2.0         # For asset management
+Flask-Compress==1.13      # For gzip compression
+Flask-RQ==0.4.3           # For background jobs
+itsdangerous==2.1.2       # For token generation
+Werkzeug==3.0.1           # For password hashing
+faker==24.8.0             # For generating fake data
+redis==5.0.4              # For RQ worker
+rq==1.16.2                # For RQ worker
+raygun4py==4.3.2          # For error reporting
+isort==5.13.2             # For code formatting
+yapf==0.40.2              # For code formatting
+WTForms==3.1.2            # For forms
+SQLAlchemy==2.0.30        # For direct SQLAlchemy usage
