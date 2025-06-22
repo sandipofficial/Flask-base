@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Welcome, {{session.username}} !
+</h1>
+<div class="columns">
+  <div class="column">
+    <div class="box">
+      <h1 class="subtitle" style="color:black">
+        Add New Task
+      </h1>
+      <form method="POST" action="/user">
+        <div class="field">
+          <label class="label">
+            Title <font color="red">*</font>
+          </label>
+            <div class="control">
+                <input name="title" class="input is-large" type="username" placeholder="Title" id="username" required>
+            </div>
+          </div>
+          <label class="label">
+            Date <font color="red">*</font>
+          </label>
+        <div class="field">
+            <input class="input is-large" name="end" placeholder="DD/MM/YYYY" type="datetime" required/>
+        </div>
+        <div class="field">
+          <label class="label">
+            Content
+          </label>
+            <div class="control">
+              <textarea name="content" class="textarea" placeholder="Content" rows="4"></textarea>
+            </div>
+          </div>
+        <div class="field">
+        </div>
+        <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Submit">
+      </form>
+      <h1 class="text">{{msg}}</h1>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box" style="overflow:auto; max-height: 550px;">
+      <h1 class="subtitle" style="color:black">
+        My tasks
+      </h1>
+      {% for values in tasks %}
+      <div class="box" style="display:flex; justify-content: center; align-items: center;">
+        <span class="subtitle" style="color:black; flex:1; margin:0px;">
+          {{values['end']}}
+        </span>
+          <span class="subtitle" style="color:black; flex:1; margin:0px;">
+            {{values['title']}}
+          </span>
+          <form method="POST">
+            <input type="submit" class="button is-block is-info is-large is-fullwidth" name="{{values['task_id']}}" value="Manage">
+          </form>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
